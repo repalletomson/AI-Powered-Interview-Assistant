@@ -106,15 +106,15 @@ export const listGeminiModels = async () => {
     }
 
     const data = await response.json();
-    console.log("Available models:", data.models?.map((m: any) => m.name) || []);
+    console.log("Available models:", data.models?.map((m: { name: string }) => m.name) || []);
 
     // Filter for generateContent capable models
-    const generateModels = data.models?.filter((m: any) =>
+    const generateModels = data.models?.filter((m: { supportedGenerationMethods?: string[] }) =>
       m.supportedGenerationMethods?.includes('generateContent')
     );
 
     console.log("Models that support generateContent:");
-    generateModels?.forEach((model: any) => {
+    generateModels?.forEach((model: { name: string }) => {
       console.log(`- ${model.name.replace('models/', '')}`);
     });
 
@@ -125,6 +125,6 @@ export const listGeminiModels = async () => {
 
 // Make it available globally for browser console testing
 if (typeof window !== 'undefined') {
-  (window as any).testGeminiAPI = testGeminiAPI;
-  (window as any).listGeminiModels = listGeminiModels;
+  (window as typeof window & { testGeminiAPI: typeof testGeminiAPI; listGeminiModels: typeof listGeminiModels }).testGeminiAPI = testGeminiAPI;
+  (window as typeof window & { testGeminiAPI: typeof testGeminiAPI; listGeminiModels: typeof listGeminiModels }).listGeminiModels = listGeminiModels;
 }

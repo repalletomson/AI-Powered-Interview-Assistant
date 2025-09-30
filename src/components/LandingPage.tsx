@@ -142,7 +142,7 @@ export default function LandingPage({ onStartInterview }: LandingPageProps) {
                 transition={{ delay: 0.8, duration: 0.6 }}
                 className="text-gray-400 mt-6 text-lg"
               >
-                The world's most powerful AI interviewer
+                The world&apos;s most powerful AI interviewer
               </motion.p>
             </motion.div>
           </div>

@@ -175,5 +175,5 @@ function isResumeDocument(text: string): boolean {
 
 // Make it available globally for browser console testing
 if (typeof window !== 'undefined') {
-  (window as any).testResumeDetection = testResumeDetection;
+  (window as typeof window & { testResumeDetection: typeof testResumeDetection }).testResumeDetection = testResumeDetection;
 }

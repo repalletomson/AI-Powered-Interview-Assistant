@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
-import { setCurrentCandidate, addCandidate, startInterview, addChatMessage, setCurrentQuestion, updateCandidate } from '@/store/slices/interviewSlice';
+import { setCurrentCandidate, addCandidate, addChatMessage, updateCandidate } from '@/store/slices/interviewSlice';
 import { Candidate, ChatMessage } from '@/types';
 import { ExtractedInfo } from '@/utils/resumeParser';
-import { AIService } from '@/utils/aiService';
 import ResumeUpload from './ResumeUpload';
 import ChatInterface from './ChatInterface';
 

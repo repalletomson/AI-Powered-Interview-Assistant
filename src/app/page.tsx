@@ -1,11 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { setShowWelcomeBack, setActiveTab } from '@/store/slices/interviewSlice';
-import { Users, MessageSquare, Brain, Sparkles } from 'lucide-react';
+import { Users, MessageSquare } from 'lucide-react';
 import IntervieweeTab from '@/components/IntervieweeTab';
 import InterviewerDashboard from '@/components/InterviewerDashboard';
 import WelcomeBackModal from '@/components/WelcomeBackModal';
