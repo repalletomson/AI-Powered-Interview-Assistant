@@ -1,10 +1,12 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Question, Answer } from '@/types';
 
+
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_GEMINI_API_KEY;
 if (!apiKey) {
   console.error('NEXT_PUBLIC_GOOGLE_GEMINI_API_KEY is not set. Please add it to your .env.local file.');
 }
+
 
 export class AIService {
   private static genAI = new GoogleGenerativeAI(apiKey || 'demo_key');
