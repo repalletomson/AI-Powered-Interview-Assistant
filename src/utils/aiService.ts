@@ -7,7 +7,7 @@ if (!apiKey) {
 }
 
 export class AIService {
-  private static genAI = new GoogleGenerativeAI(apiKey || 'AIzaSyAdQsLwckXxW8QkBtyOJ85l6DAYIP4RCCo');
+  private static genAI = new GoogleGenerativeAI(apiKey || 'demo_key');
   private static model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
   private static async callGeminiAPI(prompt: string): Promise<string> {
